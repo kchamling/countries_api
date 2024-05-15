@@ -3,24 +3,39 @@ const countriesContainer = document.querySelector(".countries-container");
 fetch("https://restcountries.com/v3.1/all")
   .then((res) => res.json())
   .then((data) => {
-
-    console.log(data);
     data.forEach((country) => {
+      // Check if the country has a capital property and it's an array
+      if (country.hasOwnProperty("capital") && Array.isArray(country.capital)) {
+        let capitalInfo;
 
-      const countryCard = document.createElement("a");
-      countryCard.classList.add("country-card");
-      countryCard.href = `/country.html?name=${country.name.common}`
+        // Check if the country has multiple capitals
+        if (country.capital.length > 1) {
+          capitalInfo = country.capital.join(", ");
+        } else if (country.capital.length === 1) {
+          capitalInfo = country.capital[0];
+        } else {
+          capitalInfo = "N/A";
+        }
 
-      const cardHTML = `
-            <img src=${country.flags.svg} alt=${country.name.common} />
-            <div class="card-text">
-                <h3 class="card-title">${country.name.common}</h3>
-                <p><b>Population: </b>${country.population.toLocaleString('en-DE')}</p>
-                <p><b>Region: </b>${country.region}</p>
-                <p><b>Capital: </b>${country.capital?.[0]}</p>
-            </div>
-            `;
-      countryCard.innerHTML = cardHTML;
-      countriesContainer.append(countryCard);
+        // Create country card
+        const countryCard = document.createElement("a");
+        countryCard.href = `/country.html?name=${country.name.common}`;
+        countryCard.classList.add("country-card");
+        countryCard.innerHTML = `
+          <div class="country-flag">
+            <img src="${country.flags.svg}"/>
+          </div>
+          <h2>${country.name.common}</h2>
+          <div class="country-details">
+            <p><b>Population:</b>&nbsp;${country.population}</p>
+            <p><b>Region:</b>&nbsp;${country.region}</p>
+            <p><b>Capital:</b>&nbsp;${capitalInfo}</p>
+          </div> 
+        `;
+        countriesContainer.append(countryCard);
+      }
     });
+  })
+  .catch((error) => {
+    console.log("Error fetching data:", error);
   });

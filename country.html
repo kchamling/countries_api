@@ -20,44 +20,34 @@
   <body>
     <!-- ========== Header Section Starts  ========== -->
 
-    <header class="header-container">
-      <div class="header-content">
+    <section class="header-container">
+      <header>
         <h2 class="title">Where in the world?</h2>
         <p><i class="fa-solid fa-moon"></i>&nbsp;&nbsp;Dark Mode</p>
-      </div>
-    </header>
+      </header>
+    </section>
 
     <!-- ========== Header Section Ends  ========== -->
 
     <!-- ========== Main Section Starts  ========== -->
 
     <main>
+      <span id="back-button">
+        <i class="fa-solid fa-arrow-left"></i>&nbsp;&nbsp;Back</span
+      >
       <div class="country-details-container">
-        <span class="back-button" onclick="history.back()">
-          <i class="fa-solid fa-arrow-left"></i> &nbsp;&nbsp; Back</span
-        >
-
+        <img src="https://flagcdn.com/us.svg" alt="" />
         <div class="country-details">
-          <img src="" alt="flag" />
-
-          <div class="details-text-container">
-            <h1></h1>
-            <div class="details-text">
-              <p><b>Native Name: </b><span class="native-name"></span></p>
-              <p><b>Population: </b><span class="population"></span></p>
-              <p><b>Region: </b><span class="region"></span></p>
-              <p><b>Sub Region: </b><span class="sub-region"></span></p>
-              <p><b>Capital: </b><span class="capital"></span></p>
-              <p>
-                <b>Top Level Domain: </b><span class="top-level-domain"></span>
-              </p>
-              <p><b>Currencies: </b><span class="currency"></span></p>
-              <p><b>Languages: </b><span class="language"></span></p>
-            </div>
-
-            <div class="border-countries">
-              <b>Border Countries:&nbsp;&nbsp;</b>
-            </div>
+          <div class="country-details-text">
+            <h2>Germany</h2>
+            <p><b>Native Name:</b><span id="native-name"></span></p>
+            <p><b>Population:</b> <span id="population"></span></p>
+            <p><b>Region:</b> <span id="region"></span></p>
+            <p><b>Sub Region:</b> <span id="sub-region"></span></p>
+            <p><b>Capital:</b> <span id="capital"></span></p>
+            <p><b>Top Level Domain: </b> <span id="top-level-domain"></span></p>
+            <p><b>Currencies: </b> <span id="currencies"></span></p>
+            <p><b>Languages: </b> <span id="languages"></span></p>
           </div>
         </div>
       </div>
