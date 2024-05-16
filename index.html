@@ -20,13 +20,35 @@
     <section class="header-container">
       <header>
         <h2>Where in the world?</h2>
-        <span> <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode</span>
+        <span class="theme-changer">
+          <i class="fa-regular fa-moon"></i>
+          &nbsp;&nbsp;Dark Mode</span
+        >
       </header>
     </section>
     <!-- ========== Header Section Ends  ========== -->
 
     <!-- ========== Main Section Starts  ========== -->
     <main>
+      <div class="search-filter-container">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            id="search-query"
+            type="text"
+            placeholder="Search for a country..."
+          />
+        </div>
+        <div class="filter-box">
+          <select class="filter-by-region">
+            <option hidden>Filter by Region</option>
+            <option value="africa">Africa</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
+          </select>
+        </div>
+      </div>
       <div class="countries-container"></div>
     </main>
     <!-- ========== Main Section Ends  ========== -->

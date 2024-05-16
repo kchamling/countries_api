@@ -9,6 +9,7 @@ main {
   padding: 12px 32px;
   border-radius: 4px;
   margin-left: 40px;
+  cursor: pointer;
 }
 
 .country-details-container {
@@ -20,7 +21,7 @@ main {
   flex-wrap: wrap;
 }
 .country-details-container img {
-  max-width: 240px;
+  max-width: 340px;
 }
 .country-details {
   flex-basis: 600px;
@@ -31,4 +32,26 @@ main {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.country-details-text h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.border-countries-container {
+  max-width: 700px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.border-countries-container a {
+  cursor: pointer;
+  text-decoration-line: none;
+  color: #000;
+  font-weight: 500;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 10px 32px;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.21);
 }

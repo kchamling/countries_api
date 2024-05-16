@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #eeeeee8b;
+  background-color: #fff;
+  color: #000;
   font-family: "Nunito", sans-serif;
 }
 
@@ -18,14 +19,30 @@ a {
 .header-container {
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22);
   background-color: #fff;
+  color: #fff;
 }
+
 header {
+  background-color: #fff;
+  color: #000;
   padding: 32px 0;
   max-width: 1400px;
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header-container.dark,
+header.dark,
+body.dark {
+  background-color: #000;
+  color: #fff;
+}
+.header-container.dark {
+  box-shadow: 0 0 4px 0 #fdf6f676;
+}
+.theme-changer {
+  cursor: pointer;
 }
 /***************** Header Section Ends ******************* */
 
@@ -34,7 +51,43 @@ main {
   margin: 32px;
 }
 
+.search-filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.search-box {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22);
+}
+.search-box i {
+  color: #ccc;
+}
+.search-box input {
+  width: 80%;
+  padding: 10px 20px;
+
+  color: #ddd;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.filter-box {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22);
+}
+.filter-box select {
+  border: none;
+  outline: none;
+}
 .countries-container {
+  margin-top: 64px;
   max-width: 1400px;
   margin-inline: auto;
   display: flex;
@@ -50,6 +103,11 @@ main {
   border-radius: 4px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.23);
   overflow-y: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+.country-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.23);
 }
 .country-card h2 {
   margin: 22px 0 0 20px;

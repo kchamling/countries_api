@@ -32,7 +32,7 @@
     <!-- ========== Main Section Starts  ========== -->
 
     <main>
-      <span id="back-button">
+      <span id="back-button" onclick="history.back()">
         <i class="fa-solid fa-arrow-left"></i>&nbsp;&nbsp;Back</span
       >
       <div class="country-details-container">
@@ -49,6 +49,10 @@
             <p><b>Currencies: </b> <span id="currencies"></span></p>
             <p><b>Languages: </b> <span id="languages"></span></p>
           </div>
+        </div>
+
+        <div class="border-countries-container">
+          <p><b>Border Countries: </b>&nbsp;</p>
         </div>
       </div>
     </main>
